@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Students</title>
+</head>
+
+<body>
+	<h1>Students</h1>
+	<button onclick="location.href = '/addStudent'">Add Student</button>
+	<table>
+		<tr>
+			<th>Student ID</th>
+			<th>Name</th>
+			<th>GPA</th>
+			<th>Action</th>
+		</tr>
+		<% students.forEach((student)=> { %>
+			<tr>
+				<td>
+					<%= student.sid %>
+				</td>
+				<td>
+					<%= student.name %>
+				</td>
+				<td>
+					<%= student.gpa %>
+				</td>
+				<td><a href="/students/delete/<%= student.sid %>">Delete</a></td>
+			</tr>
+			<% }) %>
+	</table>
+	<a href="/">Home</a>
+</body>
+
+</html>

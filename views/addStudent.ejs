@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Student</title>
+</head>
+
+<body>
+    <h1>Add Student</h1>
+
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((err)=> { %>
+                <li>
+                    <%= err.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+            <% if (sqlError !=undefined) { %>
+                <ul>
+                    <li>
+                        <%= sqlError %>
+                    </li>
+                </ul>
+                <% } %>
+
+                    <form action="/addStudent" method="POST">
+                        <label>Student ID:</label><br>
+                        <input type="text" name="sid" value="<%= sid %>"><br>
+                        <label>Name:</label><br />
+                        <input type="text" name="name" value="<%= name %>"><br>
+                        <label>GPA:</label><br />
+                        <input type="text" name="gpa" value="<%= gpa %>"><br>
+                        <input type="submit" value="Add" />
+                    </form>
+
+</body>
+
+</html>
